@@ -1,0 +1,28 @@
+// Import Bulma's core
+@import '~bulma/sass/utilities/_all';
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+// Set your colors
+$primary: blue;
+$primary-invert: findColorInvert($primary);
+
+$colors: (
+  'primary': (
+    $primary,
+    $primary-invert,
+  ),
+);
+
+// Links
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+
+// Import Bulma and Buefy styles
+@import '~bulma';
+@import '~buefy/src/scss/buefy';
+
+html,
+body {
+  font-family: 'Rubik', sans-serif;
+}
