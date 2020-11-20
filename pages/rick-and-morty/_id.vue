@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'RickAndMorty',
+  name: 'RickAndMortyCharacter',
   async asyncData({ $axios, params }) {
     const { data } = await $axios.get(
       `https://rickandmortyapi.com/api/character/${params.id}`
