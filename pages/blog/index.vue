@@ -13,22 +13,16 @@
 </template>
 
 <script>
-import Prismic from 'prismic-javascript'
-import PrismicDOM from 'prismic-dom'
-
 export default {
   name: 'Blog',
-  async asyncData() {
-    const apiEndpoint = 'https://my-jamstack-apps.prismic.io/api/v2'
-    const api = await Prismic.getApi(apiEndpoint)
-    const { results } = await api.query('')
-    const posts = results.map((post) => ({
-      id: post.id,
-      title: PrismicDOM.RichText.asText(post.data.title),
-      uid: post.uid,
-    }))
-
-    return { posts }
+  data() {
+    return {
+      posts: [
+        { id: 1, title: 'Mi publicación', uid: 'my-post' },
+        { id: 2, title: 'Otra publicación', uid: 'oher-post' },
+        { id: 3, title: 'JAMstack', uid: 'jamstack' },
+      ],
+    }
   },
 }
 </script>

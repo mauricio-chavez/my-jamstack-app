@@ -11,19 +11,17 @@
 </template>
 
 <script>
-import Prismic from 'prismic-javascript'
-import PrismicDOM from 'prismic-dom'
-
 export default {
   name: 'BlogPost',
-  async asyncData({ $axios, params }) {
-    const apiEndpoint = 'https://my-jamstack-apps.prismic.io/api/v2'
-    const api = await Prismic.getApi(apiEndpoint)
-    const result = await api.getByUID('blog_post', params.uid)
+  data() {
     return {
       post: {
-        title: PrismicDOM.RichText.asText(result.data.title),
-        content: PrismicDOM.RichText.asHtml(result.data.content),
+        title: 'Mi post genérico',
+        content: `<div>
+                    <h1>Este es mi post</h1>
+                    <p>Opinión de mi contenido</p>
+                    <a href="https://prismic.io">Ir a la liga</a>
+                  </div>`,
       },
     }
   },

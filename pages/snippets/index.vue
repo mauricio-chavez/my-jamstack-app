@@ -24,9 +24,17 @@
 <script>
 export default {
   name: 'Snippets',
-  async asyncData({ $content }) {
-    const snippets = await $content('snippets').fetch()
-    return { snippets }
+  data() {
+    return {
+      snippets: [
+        { title: 'Mi snippet', description: 'Descripción', slug: 'my-snippet' },
+        {
+          title: 'Otro snippet',
+          description: 'Otra descripción',
+          slug: 'other-snippet',
+        },
+      ],
+    }
   },
 }
 </script>
